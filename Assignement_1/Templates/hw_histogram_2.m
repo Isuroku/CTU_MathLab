@@ -16,5 +16,5 @@ plot(bin_centers, lut);
 ylim([-0.2, 1.2]);
 
 % apply it and show result:
-%im_stretched = transform_by_lut(im, lut);
-%showim_hist_cdf(im_stretched);
+im_stretched = transform_by_lut(im, lut);
+showim_hist_cdf(im_stretched);
