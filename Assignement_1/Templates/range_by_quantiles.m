@@ -1,20 +1,24 @@
 function [x_low, x_high] = range_by_quantiles(cdf, p_low, p_high)
 
 len = length(cdf);
-x_low = 0;
-x_high = len;
+intensity_values = linspace(0, 1, len);
+x_low_index = 0;
+x_high_index = len;
 
 for i=1:len
     if cdf(i) <= p_low
-        x_low = i;    
+        x_low_index = i;    
     end
-    if cdf(i) >= p_high && x_high == len
-        x_high = i;      
+    if cdf(i) >= p_high && x_high_index == len
+        x_high_index = i;      
     end
 end
 
+x_low = intensity_values(x_low_index);
+x_high = intensity_values(x_high_index);
 
-%intensity_values = linspace(0, 1, N);
+
+
 
 % while cdf(i) <= p_low
 %     if x_low < intensity_values(i)
