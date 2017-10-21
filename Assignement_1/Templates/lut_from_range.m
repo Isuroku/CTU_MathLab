@@ -30,7 +30,7 @@ k = 1/range;
 
 for i=1:N
     value = 0;
-    if i >= x_high_index
+    if i > x_high_index
         value = 1;
     elseif i > x_low_index
         value = (i-x_low_index)*k;

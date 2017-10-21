@@ -2,7 +2,7 @@ function [x_low, x_high] = range_by_quantiles(cdf, p_low, p_high)
 
 len = length(cdf);
 intensity_values = linspace(0, 1, len);
-x_low_index = 0;
+x_low_index = 1;
 x_high_index = len;
 
 for i=1:len
