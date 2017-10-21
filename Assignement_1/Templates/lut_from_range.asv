@@ -16,12 +16,12 @@ x_high_index = N;
 
 for i=1:N
     if intensity_values(i) == x_low
-        x_low_index = i;
-    end
-    if intensity_values(i) == x_high
-        x_high_index = i;
+        x_low_index = 
     end
 end
+
+x_high_index = round(x_high * N);
+x_low_index = round(x_low * N);
 
 lut = zeros(1, N);
 
