@@ -1,6 +1,11 @@
 function inv_lut = inverse_lut(lut)
-
+subplot(2,2,1);
+plot(lut);
+%%
 len = length(lut);
+
+
+
 
 % Find real range of source hist
 left_index = 0;
@@ -45,10 +50,29 @@ shift_right = right_index ~= len;
  end
  
  if shift_right
-     new_y_lut(start_index) = 1;
-     new_x_lut(start_index) = 1;
+     new_y_lut(start_index) = i * k;
+     new_x_lut(start_index) = lut(i);
  end
  
- inv_lut_bins_pos = linspace(0, 1, len);
- 
- inv_lut = interp1(new_x_lut,new_y_lut,inv_lut_bins_pos);
+% %new_y_lut(end) = 1;
+% interp_x_lut = zeros(1,len);
+% for i=1:len
+%     interp_x_lut(i) = i;
+% end
+% interp_y_lut = interp1(new_x_lut,new_y_lut,interp_x_lut);
+% %inv_lut = zeros(1, len);
+% 
+% 
+% inv_interp_x_lut = zeros(1,len);
+% for i=1:len
+%     inv_interp_x_lut(i) = i/len;
+% end
+% 
+% xq = linspace(0,1,len);
+% inv_lut = interp1(interp_y_lut,inv_interp_x_lut,xq);
+%%
+
+inv_lut = lut;
+subplot(2,2,2);
+plot(inv_lut);
+

@@ -2,8 +2,8 @@ im = get_image('images/CM1.jpg');
 im_target = get_image('images/CM2.jpg'); 
 Nbins = 256;
 
-test = ones(4);
-image_hist_cdf(test, 16);
+%test = ones(4);
+%image_hist_cdf(test, 16);
 
 % get histograms of both images:
 [bin_centers, h, cdf] = image_hist_cdf(im, Nbins);
