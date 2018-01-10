@@ -26,7 +26,7 @@ end
 lut = zeros(1, N);
 
 range = x_high_index - x_low_index;
-k = 1/range;
+k = 1/(range+1);
 
 for i=1:N
     value = 0;
